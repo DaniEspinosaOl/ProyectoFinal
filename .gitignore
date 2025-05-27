@@ -1,0 +1,13 @@
+# Ignorar archivos sensibles
+.env
+*.env
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+
+# Archivos de Jupyter (si usas)
+.ipynb_checkpoints/
+
+# Archivos del sistema
+.DS_Store
