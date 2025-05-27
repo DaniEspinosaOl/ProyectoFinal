@@ -1,6 +1,6 @@
 # Proyecto Final - Minería de Datos con API
 
-Este proyecto fue realizado para el curso de Econometría II. Se busca construir 
+Este proyecto fue realizado para el curso de Econometría II. Se busca construir un código que pueda sustraer datos desde una API.
 Consiste en una pipeline para recolectar datos desde una API pública (por ejemplo, YouTube Data API), procesarlos y generar un dataset limpio para análisis posterior.
 
 ## Estructura del repositorio
