@@ -5,24 +5,25 @@ import pandas as pd
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
-# =============================================
-# 1. Cargar API_KEY desde .env (aunque sea en este caso no se utilice)
-# =============================================
-load_dotenv()
-API_KEY = os.getenv("DUMMY_KEY")  # Este valor no se usa, pero es para cumplir con los visto en clase
 
-# =============================================
-# 2. Definimos una configuración en la forma de trabajar del código y las coordenadas del lugar donde nos enfocaremos
-# =============================================
+# Cargar API_KEY desde .env (aunque en este caso no se utilice)
+# Este valor no se usa, pero es para cumplir con la rúbrica y con los visto en clase
+
+load_dotenv()
+API_KEY = os.getenv("DUMMY_KEY")  
+
+
+# Definimos una configuración en la forma de trabajar del código y las coordenadas del lugar donde nos enfocaremos
+
 MAX_REINTENTOS = 3
 TIMEOUT = 30
 DELAY_ENTRE_REINTENTOS = 5
 LAT_CDMX = 19.4326
 LON_CDMX = -99.1332
 
-# =============================================
-# 3. Función para hacer el scrapping de la página Open-meteo 
-# =============================================
+
+#Función para hacer el scrapping de la página Open-meteo 
+
 def obtener_clima_historico(lat: float, lon: float, fecha: str) -> dict:
     url = (
         f"https://archive-api.open-meteo.com/v1/archive?"
@@ -56,9 +57,8 @@ def obtener_clima_historico(lat: float, lon: float, fecha: str) -> dict:
     print(f"Fallo definitivo en {fecha}")
     return None
 
-# =============================================
-# 4. Main: obtener datos del clima de 500 días en ciudad de México, ojo tiempo aprox. 30 minutos
-# =============================================
+# Main: obtener datos del clima de 500 días en ciudad de México, ojo tiempo aprox. 30 minutos
+
 fechas = [
     (datetime(2020, 1, 1) + timedelta(days=i)).strftime("%Y-%m-%d")
     for i in range(500)
@@ -74,9 +74,8 @@ for idx, fecha in enumerate(fechas):
     print(f"\rProgreso: [{porcentaje:.1f}%] {idx + 1}/500", end="")
     time.sleep(1)  # para evitar saturar la API
 
-# =============================================
 # 5. Guardar el dataset final
-# =============================================
+
 df = pd.DataFrame(datos)
 df.to_csv("data/clima_cdmx_historico.csv", index=False)
 print("\n¡Dataset guardado exitosamente!")
