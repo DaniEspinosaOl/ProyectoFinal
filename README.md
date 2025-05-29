@@ -12,7 +12,7 @@ Open-Meteo is an open-source weather API and offers free access for non-commerci
 
 ## Estructura del repositorio
 
-
+```text
   ProyectoFinal/
   ├── README.md 
   ├── .gitignore 
