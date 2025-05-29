@@ -2,6 +2,10 @@
 
 Este proyecto fue realizado para el taller de **Econometría II**. Se busca construir un código que pueda sustraer datos desde una API. En este caso se construyo un código que sea reproducible para recolectar datos climáticos usando una API pública como lo es la API de clima histórico de Open-Meteo, procesarlos y generar un conjunto de datos listo para análisis econométrico.
 
+La API de Open Meteo es pública y tiene su propios respositorio de github: 
+🌤 Open-Meteo Weather API: 
+Open-Meteo is an open-source weather API and offers free access for non-commercial use. No API key is required. You can use it immediately! https://github.com/open-meteo/open-meteo
+
 
 ## Estructura del repositorio
 
@@ -31,13 +35,27 @@ pip install -r requirements.txt
 python code/scrape_clima.py
 '''
 
+## 🔐 Uso de variables de entorno con .env
+Este proyecto incluye el uso de un archivo .env para demostrar las buenas prácticas de seguridad al manejar claves o variables confidenciales, como claves de API.
+
+Aunque la API de Open-Meteo no requiere autenticación, se simula el uso de una variable de entorno para cumplir con la rúbrica y mostrar cómo se configuraría en un entorno real.
+
+🛠️ ¿Cómo configurarlo?
+Crea un archivo llamado .env en la raíz de tu proyecto.
+
+Agrega una línea como esta:DUMMY_KEY=12345
+
+Lo anterior demostraría cómo se accede a variables seguras dentro de un script en Python usando la librería python-dotenv.
+
+
+
 ## 🧠 Detalles técnicos: uso de time.sleep(1) y duración del scraping
 Para evitar saturar el servidor de la API (Open-Meteo) y respetar sus límites de uso, el script incluye la instrucción: time.sleep(1)
 
-Esto hace que el programa espere 1 segundo entre cada petición a la API
+Así hacemos que el programa espere 1 segundo entre cada petición a la API
 Esto asegura que el script sea respetuoso con el servidor y menos propenso a errores de tipo 429 (Too Many Requests).
 
-Como resultado, el scraping de 500 días toma más de 8 minutos.
+Como resultado, el scraping de 500 días aproximadamente 30 minutos pero se estan estudiando posibles mejoras en la eficiencia del tiempo.
 
 Si se desea mayor velocidad, este valor puede ajustarse a time.sleep(0.5) (bajo riesgo) o eliminarse completamente (alto riesgo de bloqueo).
 
@@ -54,7 +72,7 @@ Estas coordenadas se encuentran definidas al inicio del archivo `scrape_clima.py
 LAT_CDMX = 19.4326
 LON_CDMX = -99.1332 
 
-🔁 ¿Quieres cambiar de ciudad?
+🔁 Si quieres cambiar de Ciudad...
 Solo reemplaza esos valores por las coordenadas deseadas. Aquí algunos ejemplos:
 
 | Ciudad      | Latitud | Longitud  |
@@ -68,7 +86,7 @@ Solo reemplaza esos valores por las coordenadas deseadas. Aquí algunos ejemplos
 
 El script `scrape_clima.py`, ubicado en la carpeta `code/`, recolecta datos históricos del clima utilizando la API de Open-Meteo. El resultado de esta recolección es un archivo llamado clima_cdmx_historico.csv. 
 
-Este dataset contiene **500 observaciones diarias** correspondientes al clima en la Ciudad de México desde el 1 de enero de 2020 en adelante.
+Este dataset contiene **500 observaciones diarias** correspondientes al clima en la Ciudad de México desde el 1 de enero de 2020 hasta el 14 de mayo de 2021. 
 
 ### 🔠 Columnas del dataset:
 
