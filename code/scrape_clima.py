@@ -43,7 +43,7 @@ def obtener_clima_historico(lat: float, lon: float, fecha: str) -> dict:
                 "temperatura_max": datos["daily"]["temperature_2m_max"][0],
                 "viento_max": datos["daily"]["windspeed_10m_max"][0],
                 "codigo_tiempo": datos["daily"]["weathercode"][0],
-                "fuente": "CDMX"
+                "fuente": "https://open-meteo.com/"
             }
 
         except requests.exceptions.Timeout:
