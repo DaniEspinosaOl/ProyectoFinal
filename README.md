@@ -1,6 +1,9 @@
-# Proyecto Final - Minería de Datos con API
+# Proyecto Final - 🌤 Minería de datos del clima
 
-Este proyecto fue realizado para el taller de **Econometría II**. Se busca construir un código que pueda sustraer datos desde una API. En este caso se construyo un código que sea reproducible para recolectar datos climáticos usando una API pública como lo es la API de clima histórico de Open-Meteo, procesarlos y generar un conjunto de datos listo para análisis econométrico.
+¿Quieres saber cómo estuvo el clima en los últimos años? 
+¿El calentamiento global es real? 
+
+Este proyecto fue realizado para contestar estas preguntas y para el taller de **Econometría II**. Se busca construir un código que pueda sustraer datos desde una API. En este caso se construyo un código que sea reproducible para recolectar datos climáticos usando una API pública como lo es la API de clima histórico de Open-Meteo, procesarlos y generar un conjunto de datos listo para análisis econométrico.
 
 La API de Open Meteo es pública y tiene su propios respositorio de github: 
 🌤 Open-Meteo Weather API: 
@@ -106,4 +109,4 @@ Puedes abrirlo con Excel, Google Sheets o directamente en Python con `pandas`.
 ## 👩‍💻 Autor
 Laura Daniela Espinosa Olvera
 CU: 192346
-Repositorio para entrega final taller de Econometría II
+Proyecto final taller de Econometría II
