@@ -22,22 +22,33 @@ Open-Meteo is an open-source weather API and offers free access for non-commerci
   └── data/
       └── clima_cdmx_historico.csv 
 
+``` 
+
 ## ⚙️ Cómo usar este proyecto 
 
 
 ### 1. Clona este repositorio:
 
+```text
+
 git clone https://github.com/DaniEspinosaOl/ProyectoFinal.git
 cd ProyectoFinal
 
+``` 
 ### 2. Instala Dependencia
 
+```text
+
 pip install -r requirements.txt
+```
 
 ### 3. Ejecuta el scraper
 
+```text
+
 python code/scrape_clima.py
-'''
+
+```
 
 ## 🔐 Uso de variables de entorno con .env
 Este proyecto incluye el uso de un archivo .env para demostrar las buenas prácticas de seguridad al manejar claves o variables confidenciales, como claves de API.
