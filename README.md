@@ -12,14 +12,15 @@ Open-Meteo is an open-source weather API and offers free access for non-commerci
 
 ## Estructura del repositorio
 
-ProyectoFinal/
-├── README.md
-├── .gitignore
-├── requirements.txt
-├── code/
-│ └── scrape_clima.py
-└── data/
-   └── clima_cdmx_historico.csv
+
+  ProyectoFinal/
+  ├── README.md 
+  ├── .gitignore 
+  ├── requirements.txt
+  ├── code/
+  │   └── scrape_clima.py
+  └── data/
+      └── clima_cdmx_historico.csv 
 
 ## ⚙️ Cómo usar este proyecto 
 
